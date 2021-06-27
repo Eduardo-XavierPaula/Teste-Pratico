@@ -3,20 +3,18 @@ module.exports = app => {
   
     var router = require("express").Router();
   
-    // Create a new user
     router.post("/", users.create);
 
-    router.get("/", users.findAll);
+    router.get("/:id", users.findAll);//id representa clientId
 
-    router.get("/:id", users.findOne);
+    router.get("/one/:id", users.findOne);
 
     router.put("/:id", users.update);
+    router.put("/password/:id", users.updateSenha);
   
-    // Delete a Tutorial with id
     router.delete("/:id", users.delete);
   
-    // Create a new Tutorial
-    router.delete("/", users.deleteAll);
+    router.delete("/all/:id", users.deleteAll);//id representa clientId
     
     app.use('/api/users', router);
   };
