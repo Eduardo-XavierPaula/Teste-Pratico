@@ -85,17 +85,17 @@ exports.update = (req, res) => {
         .then(num => {
             if (num == 1) {
                 res.send({
-                    message: "Comentario foi atualizado com sucesso."
+                    message: "Usuario foi atualizado com sucesso."
                 });
             } else {
                 res.send({
-                    message: `Não pode atualizar Comentario com id=${id}. Talvez Comentario não foi encontrado ou req.body está vazio!`
+                    message: `Não pode atualizar Usuario com id=${id}. Talvez Usuario não foi encontrado ou req.body está vazio!`
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Error atualizando Comentario com id=" + id
+                message: "Error atualizando Usuario com id=" + id
             });
         });
 };
@@ -117,13 +117,13 @@ exports.updateSenha = (req, res) => {
                 });
             } else {
                 res.send({
-                    message: `Não pode atualizar senha de Comentario com id=${id}. Talvez Comentario não foi encontrado ou req.body está vazio!`
+                    message: `Não pode atualizar senha de Usuario com id=${id}. Talvez Usuario não foi encontrado ou req.body está vazio!`
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Error atualizando senha de Comentario com id=" + id
+                message: "Error atualizando senha de Usuario com id=" + id
             });
         });
 };
@@ -138,17 +138,17 @@ exports.delete = (req, res) => {
         .then(num => {
             if (num == 1) {
                 res.send({
-                    message: "Comentario foi deletado com sucesso!"
+                    message: "Usuario foi deletado com sucesso!"
                 });
             } else {
                 res.send({
-                    message: `Não pode deletar Comentario com id=${id}. Talvez Comentario não foi encontrado!`
+                    message: `Não pode deletar Usuario com id=${id}. Talvez Usuario não foi encontrado!`
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Não pode deletar Comentario com id=" + id
+                message: "Não pode deletar Usuario com id=" + id
             });
         });
 };
